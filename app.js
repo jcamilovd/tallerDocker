@@ -21,17 +21,22 @@ app.post('/token', (req, res) => {
       throw error;
 
     results.forEach(result => {
-      
-      
-      console.log(result.email);
-      const { id: sub, name } = { id: result.id_usuario, name: result.email }
 
-      const token = jwt.sign({
-        sub,
-        name,
-        exp: Date.now() + 60 * 100
-      }, secretKey);
-      res.send({ token });
+      if (result.email == req.body.mail && result.password == req.body.password) {
+        console.log(result.email);
+        const { id: sub, name } = { id: result.id_usuario, name: result.email }
+
+        const token = jwt.sign({
+          sub,
+          name,
+          exp: Date.now() + 60 * 100
+        }, secretKey);
+
+        res.send({ token });
+
+      } else {
+        res.send({ 'Error': 'Usuario o contraseña incorrecta' });
+      }
     });
   });
 });
