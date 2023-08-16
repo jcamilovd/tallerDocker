@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
-    <title>DOM console.log() Method</title>
+    <title>Reto 2</title>
     <style>
         h1 {
             color: green;
         }
-         
+
         h2 {
             font-family: Impact;
         }
-         
+
         body {
             text-align: center;
         }
     </style>
 </head>
- 
+
 <body>
     <h1>MICROSERVICIOS</h1>
-    <p>
-        To view the message in the console
-        press the F12 key on your keyboard.
-    </p>
-    <p>
-        Cree un programa servidor que espere la llegada de una solicitud por el puerto 80 con
-        el nombre de un usuario, el programa deberá responder "Hola nombreUsuario".
-        Cree un Dockerfile con todo lo necesario para ejecutar su programa.
-        Cree una imagen a partir del Dockerfile que creo.
-        Finalmente cree un contenedor basado en la imagen creada y verifique su correcto
-        funcionamiento.
-    </p>
-    <br>
-    <button ondblclick="log_console()">
-        Ver mensaje
-    </button>
+    <form>
+        <label for="fname">Nombres:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Apellidos:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <button type="button" onclick="getValueInput()">
+            Mostrar
+        </button>
+
+    </form>
     <script>
-        function log_console() {
-            console.log
-                ("GeeksforGeeks is a portal for geeks.");
+
+        const getValueInput = () => {
+            let nombre = document.getElementById("fname").value;
+            let apellido = document.getElementById("lname").value;
+            alert("Bienvenido " + nombre + " " + apellido)
+
         }
+
     </script>
+    <br>
 </body>
- 
+
 </html>
