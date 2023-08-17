@@ -13,7 +13,7 @@ const secretKey = 'Q2xhdmVTZWNyZXRhQVBJSldUQWRtaW5x';
 // Ruta de autenticación
 app.post('/token', (req, res) => {
 
-  let sql = "select id_usuario, email, password from usuario where email = '" + req.body.mail + "'";
+  let sql = "select id_usuario, email, password from usuarios where email = '" + req.body.mail + "'";
   console.log(sql);
 
   conexion.query(sql, function (error, results, fields) {

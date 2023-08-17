@@ -2,9 +2,10 @@ var mysql = require('mysql');
 
 var conexion= mysql.createConnection({
     host : 'localhost',
-    database : 'indicador',
-    user : 'root',
+    database : 'microservicios',
+    user : 'microservicios',
     password : '1094975931',
+    insecureAuth: true
 });
 
 /*
